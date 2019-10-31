@@ -11,10 +11,10 @@ ESLint plugin to make sure tech debt is not accumulating in your GraphQL fragmen
     ```
     {
       "extends": [
-        "plugin:relay-fragments/recommended"
+        "plugin:graphql-fragments/recommended"
       ],
       "plugins": [
-        "relay-fragments"
+        "graphql-fragments"
       ]
     }
     ```
@@ -31,7 +31,7 @@ Verifies that your fragment declaration is not too complex. This is usually a si
 - We add 1 point for every field, inline fragment & fragment spread
 - We add an extra 1 for object field, e.g. `{ address { street }}` is penalized by 3 points
 - query, mutation & subscription operations are penalized by 8 points
-    - this is to encourage you to split query rendering from UI by utilizing relay fragment components 
+    - this is to encourage you to split query rendering from UI by utilizing GraphQL fragment components 
 
 Examples of **incorrect** code:
 
@@ -89,7 +89,7 @@ You can change the maximum complexity threshold by `{ "threshold": 30 }` option:
 ```
     {
       "rules": [
-        "relay-fragments/limit-complexity": ["error", { "threshold": 30 }]
+        "graphql-fragments/limit-complexity": ["error", { "threshold": 30 }]
       ]
     }
 ```
